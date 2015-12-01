@@ -1,0 +1,21 @@
+{
+  "name": "dna-polyfills",
+  "version": "0.0.1",
+  "authors": [
+    "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)"
+  ],
+  "description": "A set of polyfills for DNA components.",
+  "main": "dist/dna-polyfills.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "test",
+    "tests"
+  ]
+}

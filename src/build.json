@@ -1,0 +1,8 @@
+[
+    "../node_modules/webcomponents.js/webcomponents-light.js",
+    "array/foreach.js",
+    "array/from.js",
+    "array/is-array.js",
+    "dom/class-list.js",
+    "utils/promise.js"
+]
