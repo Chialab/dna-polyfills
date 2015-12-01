@@ -3,7 +3,7 @@
     var file = 'index.js';
 
     var modules = [
-        '../node_modules/webcomponents.js/webcomponents-light.js',
+        '../node_modules/webcomponents.js/webcomponents-lite.js',
         'array/foreach.js',
         'array/from.js',
         'array/is-array.js',

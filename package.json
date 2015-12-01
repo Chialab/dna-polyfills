@@ -1,6 +1,6 @@
 {
   "name": "dna-polyfills",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A set of polyfills for DNA components.",
   "main": "src/index.js",
   "scripts": {
