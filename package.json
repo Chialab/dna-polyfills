@@ -7,7 +7,7 @@
     "build": "npm install && grunt build"
   },
   "author": "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)",
-  "license": "ISC",
+  "registry": "npm",
   "dependencies": {
     "webcomponents.js": "^0.7.18"
   },
