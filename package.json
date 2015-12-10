@@ -1,6 +1,6 @@
 {
   "name": "dna-polyfills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of polyfills for DNA components.",
   "main": "src/index.next.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)",
   "dependencies": {
-    "webcomponents.js": "^0.7.18"
+    "document-register-element": "^0.5.3"
   },
   "devDependencies": {
     "babel-core": "^5.8.34",

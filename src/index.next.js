@@ -1,4 +1,3 @@
-import '../node_modules/webcomponents.js/webcomponents-lite.js';
+import '../node_modules/document-register-element/build/document-register-element.max.js';
 import './array/index.next.js';
 import './dom/index.next.js';
-import './utils/index.next.js';

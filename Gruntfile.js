@@ -13,7 +13,7 @@ grunt.initConfig({
             configFile: './system.config.js',
             minify: true,
             build: {
-                mangle: false
+                mangle: true
             }
         },
         dist: {
