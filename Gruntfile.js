@@ -1,36 +1,28 @@
-var grunt = require('grunt'),
-    path =
+var grunt = require('grunt');
 
 require('load-grunt-tasks')(grunt);
 
-var map = require('./src/build.json').map(function (path) {
-    return 'src/' + path;
-})
-
 grunt.initConfig({
     clean: {
-        dist: ['dist/**/*']
+        dist: ['dist/**/*'],
     },
-    concat: {
-        dist: {
-            options: {
-                sourceMap: true
-            },
-            files: {
-                'dist/dna-polyfills.js': map
+    systemjs: {
+        options: {
+            sfx: true,
+            baseURL: '.',
+            configFile: './system.config.js',
+            minify: true,
+            build: {
+                mangle: false
             }
-        }
-    },
-    uglify: {
+        },
         dist: {
-            options: {
-                sourceMap: false
-            },
-            files: {
-                'dist/dna-polyfills.min.js': 'dist/dna-polyfills.js'
-            }
+            files: [{
+                src: 'src/index.next.js',
+                dest: 'dist/dna-polyfills.min.js'
+            }]
         }
     }
 });
 
-grunt.registerTask('build', ['clean', 'concat', 'uglify']);
+grunt.registerTask('build', ['clean', 'systemjs']);
