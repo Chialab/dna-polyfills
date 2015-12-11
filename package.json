@@ -1,20 +1,10 @@
 {
   "name": "dna-polyfills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A set of polyfills for DNA components.",
   "main": "src/index.next.js",
   "scripts": {
     "build": "npm install && grunt build"
   },
-  "author": "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)",
-  "dependencies": {
-    "document-register-element": "^0.5.3"
-  },
-  "devDependencies": {
-    "babel-core": "^5.8.34",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.7.0",
-    "grunt-systemjs-builder": "^0.2.5",
-    "load-grunt-tasks": "^3.3.0"
-  }
+  "author": "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)"
 }
