@@ -1,10 +1,7 @@
 {
   "name": "dna-polyfills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A set of polyfills for DNA components.",
   "main": "src/index.next.js",
-  "scripts": {
-    "build": "npm install && grunt build"
-  },
   "author": "Chialab s.r.l. <dev@chialab.it> (http://www.chialab.com)"
 }
