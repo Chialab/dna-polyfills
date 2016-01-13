@@ -5,24 +5,17 @@
 
         function bindFunction(ctx, fn) {
             return function() {
-                fn.apply(ctx, arguments);
+                return fn.apply(this, arguments);
             }
         }
 
-        function bindProperty(ctx, parent, prop) {
+        function bindProperty(ctx, parentDescriptor, prop) {
             Object.defineProperty(ctx, prop, {
-                get: function () {
-                    try {
-                        return parent[prop];
-                    } catch(ex) {}
-                },
-                set: function (val) {
-                    try {
-                        parent[prop] = val;
-                    } catch(ex) {}
-                },
+                get: parentDescriptor.get ? parentDescriptor.get.bind(ctx) : undefined,
+                set: parentDescriptor.set ? parentDescriptor.set.bind(ctx) : undefined,
                 configurable: true
             });
+
         }
 
         function iterateProps(subClass, superClass) {
@@ -40,8 +33,8 @@
                         var superDescriptor = Object.getOwnPropertyDescriptor(superClass, prop);
                         if (typeof superDescriptor.get !== 'function' && typeof superClass[prop] === 'function') {
                             subClass[prop] = bindFunction(subClass, superClass[prop]);
-                        } else {
-                            bindProperty(subClass, superClass, prop);
+                        } else if (typeof superDescriptor.get == 'function') {
+                            bindProperty(subClass, superDescriptor, prop);
                         }
                     }
                 }
