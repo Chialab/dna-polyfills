@@ -9,7 +9,18 @@
             }
         }
 
-        function bindProperty(ctx, parentDescriptor, prop) {
+        function bindProperty(ctx, prop, parentDescriptor) {
+            if (!parentDescriptor) {
+                var defaultValue = ctx.__proto__[prop];
+                parentDescriptor = {
+                    get: function () {
+                        return ctx['__' + prop] || defaultValue
+                    },
+                    set: function (val) {
+                        ctx['__' + prop] = val;
+                    }
+                }
+            }
             Object.defineProperty(ctx, prop, {
                 get: parentDescriptor.get ? parentDescriptor.get.bind(ctx) : undefined,
                 set: parentDescriptor.set ? parentDescriptor.set.bind(ctx) : undefined,
@@ -34,7 +45,9 @@
                         if (typeof superDescriptor.get !== 'function' && typeof superClass[prop] === 'function') {
                             subClass[prop] = bindFunction(subClass, superClass[prop]);
                         } else if (typeof superDescriptor.get == 'function') {
-                            bindProperty(subClass, superDescriptor, prop);
+                            bindProperty(subClass, prop, superDescriptor);
+                        } else {
+                            bindProperty(subClass, prop);
                         }
                     }
                 }
