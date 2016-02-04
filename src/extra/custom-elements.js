@@ -753,6 +753,9 @@ window.CustomElements.addModule(function(scope) {
         }
         implementPrototype(element, definition);
         element.__upgraded__ = true;
+        if (definition.prototype && typeof definition.prototype._constructor == 'function') {
+            element.constructor = definition.prototype._constructor;
+        }
         created(element);
         if (isAttached) {
             scope.attached(element);
@@ -830,6 +833,9 @@ window.CustomElements.addModule(function(scope) {
         registerDefinition(definition.__name, definition);
         definition.ctor = generateConstructor(definition);
         definition.ctor.prototype = definition.prototype;
+        if (typeof definition.prototype.constructor === 'function') {
+            definition.prototype._constructor = definition.prototype.constructor;
+        }
         definition.prototype.constructor = definition.ctor;
         if (scope.ready) {
             upgradeDocumentTree(document);
