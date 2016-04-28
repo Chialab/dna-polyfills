@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-	if (typeof Array.from === 'undefined') {
-		// https://github.com/mathiasbynens/Array.from
+    if (typeof Array.from === 'undefined') {
+        // https://github.com/mathiasbynens/Array.from
         var defineProperty = (function() {
             // IE 8 only supports `Object.defineProperty` on DOM elements.
             try {
@@ -80,5 +80,5 @@
             'configurable': true,
             'writable': true
         });
-	}
+    }
 })();
