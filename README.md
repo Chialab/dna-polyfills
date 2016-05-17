@@ -10,3 +10,5 @@ It includes:
 * Array.[from](https://github.com/mathiasbynens/Array.from)
 * Array.[forEach](http://javascript.boxsheep.com/polyfills/Array-prototype-forEach/)
 * Array.[isArray](https://gist.github.com/atk/1034882)
+* Object.[setPrototypeOf](https://gist.github.com/edoardocavazza/47246856759f2273e48b)
+* Function.[name](https://github.com/JamesMGreene/Function.name)
