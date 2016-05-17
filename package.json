@@ -2,6 +2,10 @@
   "name": "dna-polyfills",
   "version": "0.6.0",
   "description": "A set of polyfills for DNA components.",
-  "main": "src/index.next.js",
-  "author": "Chialab <dev@chialab.io> (http://www.chialab.com)"
+  "author": "Chialab <dev@chialab.io> (http://www.chialab.com)",
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/Chialab/dna-polyfills.git"
+  }
 }
