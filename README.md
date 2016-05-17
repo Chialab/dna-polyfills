@@ -7,5 +7,5 @@ A set of polyfills for browsers. It includes:
 * [DOM ClassList](https://github.com/eligrey/classList.js)
 * [ES6 Promise](https://github.com/jakearchibald/es6-promise)
 * Array.[from](https://github.com/mathiasbynens/Array.from)
-* Array.[foreach](http://javascript.boxsheep.com/polyfills/Array-prototype-forEach/)
+* Array.[forEach](http://javascript.boxsheep.com/polyfills/Array-prototype-forEach/)
 * Array.[isArray](https://gist.github.com/atk/1034882)
