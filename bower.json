@@ -1,7 +1,7 @@
 {
   "name": "dna-polyfills",
   "description": "A set of polyfills for DNA components.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "authors": [
     "Chialab <dev@chialab.io> (http://www.chialab.com)"
   ],

@@ -1,5 +1,5 @@
 // https://gist.github.com/edoardocavazza/47246856759f2273e48b
-(function () {
+(function() {
     if (typeof Object.setPrototypeOf === 'undefined' && typeof Object.getOwnPropertyNames === 'function') {
         var _exclude = ['length', 'name', 'arguments', 'caller', 'prototype'];
 
@@ -13,17 +13,21 @@
             if (!parentDescriptor) {
                 var defaultValue = ctx.__proto__[prop];
                 parentDescriptor = {
-                    get: function () {
-                        return ctx['__' + prop] || defaultValue
+                    get: function() {
+                        return ctx['__' + prop] || defaultValue;
                     },
-                    set: function (val) {
+                    set: function(val) {
                         ctx['__' + prop] = val;
                     }
                 }
             }
             Object.defineProperty(ctx, prop, {
-                get: parentDescriptor.get ? parentDescriptor.get.bind(ctx) : undefined,
-                set: parentDescriptor.set ? parentDescriptor.set.bind(ctx) : undefined,
+                get: function() {
+                    return parentDescriptor.get ? parentDescriptor.get.call(ctx) : undefined;
+                },
+                set: function(value) {
+                    return parentDescriptor.set ? parentDescriptor.set.call(ctx, value) : undefined;
+                }
                 configurable: true
             });
 
@@ -59,4 +63,4 @@
 
         Object.setPrototypeOf = iterateProps;
     }
-})();
+}());
