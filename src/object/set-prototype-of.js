@@ -27,7 +27,7 @@
                 },
                 set: function(value) {
                     return parentDescriptor.set ? parentDescriptor.set.call(ctx, value) : undefined;
-                }
+                },
                 configurable: true
             });
 
