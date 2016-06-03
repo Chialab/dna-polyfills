@@ -914,7 +914,9 @@ if (typeof window.CustomElements === 'undefined' || typeof window.CustomElements
                     proto = ancestor;
                 }
                 if (!foundPrototype) {
-                    console.warn(definition.tag + " prototype not found in prototype chain for " + definition.is);
+                    if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+                        console.warn(definition.tag + " prototype not found in prototype chain for " + definition.is);
+                    }
                 }
                 definition.native = nativePrototype;
             }
